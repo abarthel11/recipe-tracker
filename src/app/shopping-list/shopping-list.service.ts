@@ -7,14 +7,17 @@ export class ShoppingListService {
   ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10),
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 10),
   ];
 
   constructor() { }
 
   addIngredient(ingredient: Ingredient){
     this.ingredients.push(ingredient);
+    this.ingredientsChanged.emit(this.ingredients);
+  }
+
+  addIngredients(ingredients: Ingredient[]){
+    this.ingredients.push(...ingredients);
     this.ingredientsChanged.emit(this.ingredients);
   }
 
