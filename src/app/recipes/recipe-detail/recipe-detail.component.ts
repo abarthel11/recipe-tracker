@@ -4,18 +4,18 @@ import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 
 @Component({
-  selector: 'app-recipe-detail',
-  templateUrl: './recipe-detail.component.html',
-  styleUrls: ['./recipe-detail.component.css'],
+	selector: 'app-recipe-detail',
+	templateUrl: './recipe-detail.component.html',
+	styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-  @Input() recipe: Recipe;
+	@Input() recipe: Recipe;
 
-  constructor(private recipeService: RecipeService){}
+	constructor(private recipeService: RecipeService) {}
 
-  addToShoppingList(){
-    this.recipeService.addIngredients(this.recipe.ingredients);
-  }
+	addToShoppingList() {
+		this.recipeService.addIngredients(this.recipe.ingredients);
+	}
 
-  ngOnInit(): void {}
+	ngOnInit(): void {}
 }
