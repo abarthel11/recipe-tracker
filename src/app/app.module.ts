@@ -1,4 +1,5 @@
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +25,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 		ShoppingEditComponent,
 		DropdownDirective
 	],
-	imports: [BrowserModule, FormsModule],
+	imports: [BrowserModule, FormsModule, AppRoutingModule],
 	providers: [ShoppingListService],
 	bootstrap: [AppComponent]
 })
